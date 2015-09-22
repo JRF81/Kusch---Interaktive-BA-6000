@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>6000 São Paulo</title>
+		<link href="http://fast.fonts.net/cssapi/4c2442b0-8408-4efe-bc7a-00f97850fd9f.css" rel="stylesheet">
+
+		<!-- Videoplayer -->
+	  	<link href="css/main.css" rel="stylesheet">
+	  	<link href="js/video-js/video-js.css" rel="stylesheet" type="text/css">
+		<script src="js/video-js/video.js"></script>
+	</head>
+<body>
+	<header id="header">
+		<a href="http://de.kusch.com"><img id="logo" src="img/logo.png"/></a>
+	</header>
+	
+	
+	<nav id="menu">
+		<h3>Bedienungsanleitung</h3>
+		<ul id="models">
+			<!--  
+			<li><a href="#" class="active">6000 São Paulo</a></li>
+			<li><a href="#">9200 papilio</a></li>
+			-->
+		</ul>
+		<ul id="languages">
+			<li><a href="#">GB</a></li>
+			<li><a href="#" class="active">D</a></li>
+			<li><a href="#">NL</a></li>
+			<li><a href="#">F</a></li>
+		</ul>
+	</nav>
+	
+	<h1 id="model">6 0 0 0 &nbsp;&nbsp;S ã o  &nbsp;&nbsp;P a u l o</h1>
+	
+	<nav id="topics"></nav>
+	
+	<aside id="content">
+		<script id="nav-tpl" type="text/x-handlebars-template">
+		<ul class="first_level">
+			{{#each topics}}
+			<li id="{{id}}">
+				<span data-level="0">{{title}}</span>
+				<ul class="second_level">		
+					{{#each children}}
+	
+					<li id="{{id}}">
+						<a href="#{{id}}" data-level="1">{{{title}}}</a>
+						<ul class="third_level">
+							{{#each children}}
+							<li id="{{id}}"><a href="#{{id}}" data-level="2">{{{title}}}</a></li>
+							{{/each}}
+						</ul>
+					</li>
+
+					{{/each}}
+				</ul>
+			</li>
+			{{/each}}
+		</ul>
+	</script>
+	
+		<script id="video-tpl" type="text/x-handlebars-template">
+		<div class="slide {{type}}">
+			<video class="video-js vjs-default-skin" data-setup="{}" width="600" height="480" controls autoplay>
+				<source src="video/{{htmlcontent}}.mp4" type="video/mp4">
+				<source src="video/{{htmlcontent}}.webm" type="video/webm">
+				<source src="video/{{htmlcontent}}.ogv" type="video/ogg">
+				Ihr Browser unterstützt kein HTML5-Video!
+			</video> 
+		</div>
+	</script>
+	
+		<script id="html-tpl" type="text/x-handlebars-template">
+		<div class="slide {{type}}">
+			{{{htmlcontent}}}
+		</div>
+	</script>
+	
+		<section id="media"></section>
+		
+		<section id="info"></section>
+	</aside>
+	
+	<div id="footer"></div>
+		<script>var applicationID = "KuschBA6000";</script>
+		<script src="phonegap.js"></script>
+		
+		<script src="js/database.js"></script>
+		<script src="js/menu.js"></script>
+		<script src="lib/handlebars.js"></script>
+		<script src="lib/jquery-1.8.2.min.js"></script>
+		<script src="js/storage/websql-store.js"></script>
+		
+		<script src="js/ContentView.js"></script>
+		<script src="js/main.js"></script>
+</body>
+</html>
